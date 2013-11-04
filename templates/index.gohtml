@@ -1,0 +1,13 @@
+{{define "content"}}
+<div>
+    {{range .}}
+    <h2>
+    <a href="/posts/{{.GetID}}">{{.Title}}</a>
+    <p><small>By {{.Author}}, {{.Date.Weekday}} {{.Date.Day}} {{.Date.Month}} {{.Date.Year}}</small></p>
+    </h2>
+    <p>{{.Abstract}}</p>
+    {{else}}
+    <div><h2>There are not post on this blog!</h2></div>
+    {{end}}
+</div>
+{{end}}
