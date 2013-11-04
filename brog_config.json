@@ -1,8 +1,8 @@
 {
-   "prodPortNumber": 80,
+   "prodPortNumber": 8080,
    "develPortNumber": 3000,
-   "hostName": "localhost",
-   "maxCpus": 8,
+   "hostName": "",
+   "maxCpus": 1,
    "templatePath": "templates",
    "postPath": "posts",
    "assetPath": "assets",
