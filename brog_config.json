@@ -11,5 +11,9 @@
    "logFileVerbosity": "watch",
    "consoleVerbosity": "watch",
    "rewriteInvalid": true,
-   "rewriteMissing": true
+   "rewriteMissing": true,
+   "multilingual": false,
+   "languages": [
+      "en"
+   ]
 }
