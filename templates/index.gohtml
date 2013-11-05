@@ -1,6 +1,6 @@
 {{define "content"}}
-<div>
-    {{range .}}
+<article>
+{{range .}}
     <h2>
     <a href="/posts/{{.GetID}}">{{.Title}}</a>
     <p><small>By {{.Author}}, {{.Date.Weekday}} {{.Date.Day}} {{.Date.Month}} {{.Date.Year}}</small></p>
@@ -9,5 +9,5 @@
     {{else}}
     <div><h2>There are not post on this blog!</h2></div>
     {{end}}
-</div>
 {{end}}
+</article>
