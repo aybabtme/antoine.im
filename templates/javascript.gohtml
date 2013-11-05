@@ -1,4 +1,17 @@
 {{define "javascript"}}
-<!-- Add Javascript here -->
 <script type="text/javascript" src="/assets/js/brog.js"></script>
+<script type="text/javascript" src="/assets/js/highlight.min.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+// Single $ for inline LaTeX
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript">
+// Please do highlight my code.
+hljs.initHighlightingOnLoad();
+</script>
 {{end}}

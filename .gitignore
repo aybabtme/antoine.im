@@ -1,2 +1,3 @@
 # brog files that shouldn't be checked in git.
 brog.log
+assets/js/.DS_Store
