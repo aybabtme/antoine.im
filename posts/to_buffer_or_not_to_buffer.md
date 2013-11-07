@@ -47,7 +47,7 @@ yourData := make([]byte, dataLen)
 m, err := file.ReadAt(yourData, offset)
 ```
 
-We will not concern ourselves with _random accesses_ for this post, because they comes with its own performance issues.
+We will not concern ourselves with _random accesses_ for this post, because they come with their own performance issues.
 
 You notice that each time we `Read` or `Write` with a file, we need to provide a piece of memory which the file will read from or write to.  Oddly, the methods are taking arrays of bytes `[]byte`.  That implies that somehow, we need to create a `[]byte` of some size.  But what size?  What if you don't know the size of what you're about to read?  Can you just pass an array of size 1 and access every part of the file one byte at a time?  Sure you can do that, but it might be a bad idea.
 
@@ -78,7 +78,7 @@ So, why should we read many bytes at once instead of one at a time?  Let's look 
 
 ![Read/Write speed for a file of 1.0MB](/assets/data/to_buffer_or_not_to_buffer/mbpr_256GB_ssd_bench_1.0MB.svg "As the size of the data increases, the speed of access also increase")
 
-In the above graph, we see that as $access\ size$ increases, the speed at which we read a 1 MB file decreases.  And this decrease is exponential (see the logarithm scales).
+In the above graph, we see that as $access\ size$ increases, the time it takes to read a 1 MB file decreases.  And this decrease is exponential (see the two logarithm scales).
 
 So this is on my fast SSD.  But your regular, cheap-o web instance won't have a fast SSD (or most likely not), so what will performance look like?  Well, even worst !  Let's look at the same benchmark run on an [AWS EC2 t1.micro instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts_micro_instances.html):
 
@@ -87,6 +87,44 @@ So this is on my fast SSD.  But your regular, cheap-o web instance won't have a 
 You can see that for accesses using small buffers, the decrease in performance is 10 times that of my laptop SSD, while with buffering, the difference is not as significant (although the instance's disk - an [EBS](https://aws.amazon.com/ebs/) - has pretty terrible performances).
 
 So, I hope you're convinced now of the importance of doing buffered disk accesses.
+
+## Sum It Up
+
+How to do buffered reads and writes (ignoring all error handling):
+
+```go
+buf := bytes.NewBuffer(nil)
+// Choose a decent size, the Go standard lib defines bytes.MinRead
+pageSize := bytes.MinRead
+data := make([]byte, pageSize)
+n, _ := file.Read(data)
+
+m, err := buf.Write(data[:n])
+if err == io.EOF {
+    // We're done reading, buf contains everything
+}
+```
+
+Here I only handle `err` to check for the `io.EOF` that is returned when there is no more data to be read from the file.  When you implement your own file logic in Go, do three things:
+
+* Handle all of your errors
+* If you just want all the bytes, use [`ioutil.ReadAll(...)`](http://golang.org/pkg/io/ioutil/#ReadAll)
+* If you want to do something in real time with the data (decode its JSON content, gunzip it on the fly, ...), don't consume the actual data byte by byte.  Instead, chain it with decoders:
+
+```go
+file, err := os.Open(...)
+gzRd, err := gzip.NewReader(file)
+jsonDec, err := json.NewDecoder(gzRd)
+
+for {
+    err := jsonDec.Decode(&yourStruct)
+    if err == io.EOF {
+        // We're done
+    }
+}
+```
+
+In three line, you made an on-the-fly gzip JSON decoder.  Go is pretty awesome.
 
 ## Run It Yourself
 
