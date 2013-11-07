@@ -46,6 +46,11 @@ h2 a {
 blockquote {
     font-style: italic; }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
 /*Code styling*/
 
 pre,

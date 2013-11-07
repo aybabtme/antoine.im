@@ -2,7 +2,7 @@
     "title":"On Files: To Buffer Or Not To Buffer",
     "author":"Antoine Grondin",
     "date":"2013-11-07T00:16:30.000Z",
-    "invisible": true,
+    "invisible": false,
     "abstract":"How should I read or write to a file? Buffering, what is buffering?"
 }
 
@@ -74,9 +74,39 @@ That's much more burden onto you, isn't it?  Now you need to remember not to use
 
 Alright, alright.  "_Premature optimization is the root of all evil._" Sure it is, but in our case, it's not so much premature.  Disk IO is one of the most expensive thing your computer does.  Like, orders of magnitude more expensive than any other operation on your machine... aside perhaps network accesses.  So doing your file access _right_ is kind of essential if you want to have somehow acceptable performance.
 
-So, why should we read many bytes at once instead of one at a time?  Let's look at this graph, measured on my Macbook Pro (SSD, 256GB):
+So, why should we read many bytes at once instead of one at a time?  Let's look at this graph, measured on my MacBook Pro<sub>1</sub>:
 
 ![Read/Write speed for a file of 1.0MB](/assets/data/to_buffer_or_not_to_buffer/mbpr_256GB_ssd_bench_1.0MB.svg "As the size of the data increases, the speed of access also increase")
 
-In the above graph, we see that ass $accessSize$ increases, the speed at which we read a 1 MB file decreases.  And this decrease is exponential (see the logarithm scales).
+In the above graph, we see that as $access\ size$ increases, the speed at which we read a 1 MB file decreases.  And this decrease is exponential (see the logarithm scales).
 
+So this is on my fast SSD.  But your regular, cheap-o web instance won't have a fast SSD (or most likely not), so what will performance look like?  Well, even worst !  Let's look at the same benchmark run on an [AWS EC2 t1.micro instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts_micro_instances.html):
+
+![Read/Write speed for a file of 1.0MB](/assets/data/to_buffer_or_not_to_buffer/t1_micro_bench_1.0MB.svg "The same relation but on a T1 Micro instance.")
+
+You can see that for accesses using small buffers, the decrease in performance is 10 times that of my laptop SSD, while with buffering, the difference is not as significant (although the instance's disk - an [EBS](https://aws.amazon.com/ebs/) - has pretty terrible performances).
+
+So, I hope you're convinced now of the importance of doing buffered disk accesses.
+
+## Run It Yourself
+
+The [code to generate these graph](https://gist.github.com/aybabtme/7348714) is on my [Github](https://github.com/aybabtme/).
+
+Please note that the code is written in a script-alike way with very bad error handling.  Also, the IO code is pretty weird because of the need to compute time measurements and artificially write with various buffer size.
+
+This is not idiomatic, good Go code.
+
+## Next
+
+Right now, I don't have a post on the _random access_ side of the picture.  The day might come where I will write such a post.
+
+<sub>1: Retina, Mid 2012 with 256GB SSD</sub>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript">
+// Single $ for inline LaTeX
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
