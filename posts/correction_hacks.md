@@ -147,8 +147,8 @@ Then, we move all the files we've found in `wip/` to `done/`.
 
 ```go
 // Move all the files in `wip` to `done`
-for _, wipFiles := range wipFiles {
-    for _, wipFilename := range wipFiles {
+for _, filenamesToMove := range wipFiles {
+    for _, wipFilename := range filenamesToMove {
         doneFilename := path.Join("done", path.Base(wipFilename))
         err := os.Rename(wipFilename, doneFilename)
         if err != nil {
