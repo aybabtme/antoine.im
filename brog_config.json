@@ -1,6 +1,6 @@
 {
    "prodPortNumber": 8080,
-   "develPortNumber": 3000,
+   "develPortNumber": 4000,
    "hostName": "",
    "maxCpus": 1,
    "templatePath": "templates",
