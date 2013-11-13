@@ -9,7 +9,7 @@
 
 <script type="application/javascript" src="/assets/js/algo_convenience_hacks.js"></script>
 
-Preambule:  the algorithms in this page are all implemented in Javascript, and your browser is currently using them to generate the numbers you'll see below. Please note that I'm not a good Javascript dev and the code I've written is hackish at best.
+> Preambule:  the algorithms in this page are all implemented in Javascript, and your browser is currently using them to generate the numbers you'll see below. Please note that I'm not a good Javascript dev and the code I've written is hackish at best.
 
 ## You Love Recursion
 
@@ -499,7 +499,7 @@ for (var i = 0; i < memo.length; i++) {
 
 This thing is filled with unused cells!
 
-We can see that indeed, every multiple of $5$ is unused.  We can thus change every access to the `memo` array to only use multiples of $5$, like this:
+We can see that indeed, every non multiple of $5$ is unused.  We can thus change every access to the `memo` array to only use multiples of $5$, like this:
 
 ```javascript
 var len = Math.floor(n/5) + 1 // 1-indexed
