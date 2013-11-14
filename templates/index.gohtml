@@ -2,12 +2,12 @@
 <article>
 {{range .Posts}}
 
-    <h2><a href="/posts/{{.GetID}}">{{.Title}}</a></h2>
-    <p><small>By {{.Author}}, {{.Date.Weekday}} {{.Date.Day}} {{.Date.Month}} {{.Date.Year}}</small></p>
+<h2><a href="/posts/{{.GetID}}">{{.Title}}</a></h2>
+<p><small>By {{.Author}}, {{.Date.Weekday}} {{.Date.Day}} {{.Date.Month}} {{.Date.Year}}</small></p>
 
-    <p><small>{{.Abstract}}</small></p>
-    {{else}}
-    <div><h2>There are not post on this blog!</h2></div>
-    {{end}}
+<p><small>{{.Abstract}}</small></p>
+{{else}}
+<div><h2>There are not post on this blog!</h2></div>
 {{end}}
 </article>
+{{end}}
