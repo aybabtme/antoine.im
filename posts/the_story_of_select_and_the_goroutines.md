@@ -143,7 +143,7 @@ provided by an exposed goroutine in the API.
 
 However, if nobody is consuming
 those results, or if the consumer is too slow to grab them, I don't want
-the reporter to stop collection results - and thus eventually block the
+the reporter to stop collecting results - and thus eventually block the
 worker goroutines when their reporting queue gets full.  The idea is thus
 to offer the results to clients only if they are ready to receive them, and
 drop them otherwise.
