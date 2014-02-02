@@ -78,11 +78,11 @@ for i := 0; i < 5; i++ {
 The [output of this program](http://play.golang.org/p/KemjPa-fDz) will be:
 
 ```
-2009/11/10 23:00:00 Nobody's listening!
-2009/11/10 23:00:01 Nobody's listening!
-2009/11/10 23:00:02 Nobody's listening!
+2009/11/10 23:00:00 Nobody's talking!
+2009/11/10 23:00:01 Nobody's talking!
+2009/11/10 23:00:02 Nobody's talking!
 2009/11/10 23:00:03 Got a message
-2009/11/10 23:00:04 Nobody's listening!
+2009/11/10 23:00:04 Nobody's talking!
 ```
 
 ### Real use-case
