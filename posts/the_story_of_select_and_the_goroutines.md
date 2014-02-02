@@ -1,5 +1,5 @@
 {
-    "title":"Go : Non blocking producers and consumers",
+    "title":"Go: Non blocking producers and consumers",
     "author":"Antoine Grondin",
     "date":"2014-02-01T15:09:10.000Z",
     "invisible": false,
