@@ -4,11 +4,10 @@ header {
     vertical-align: middle;
     top: 0;
     left: 0;
-    width:100%;
-    background: white; }
+    width:100%;}
 
 header h1 {
-    color: #333; }
+    color: #535353; }
 
 #content {
     width:80%;
