@@ -2,7 +2,7 @@
     "title":"This Is Brog",
     "author":"Antoine Grondin",
     "date":"2013-11-03T22:20:16.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"Introduction to this site."
 }
 I have created the [`brog`](https://github.com/aybabtme/brog) project for fun.  It is

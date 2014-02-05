@@ -2,7 +2,7 @@
     "title":"Comment Aller Au Viet Nam",
     "author":"Antoine Grondin",
     "date":"2013-10-22T04:44:11.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"Un ramassis d'information à propos de trucs de base à prendre en compte avant d'aller au Viet Nam, particulièrement si c'est à l'occasion de mon marriage.",
     "language":"fr"
 }

@@ -2,7 +2,7 @@
     "title":"How To Get In Viet Nam",
     "author":"Antoine Grondin",
     "date":"2013-10-22T04:44:11.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"A rough information dump on basic things to consider before going to Viet Nam, especially for the occasion of my wedding.",
     "language":"en"
 }
