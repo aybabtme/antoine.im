@@ -3,7 +3,7 @@
     "author":"Antoine Grondin",
     "date":"2013-11-12T23:59:59.000Z",
     "invisible": false,
-    "abstract":"So you've got this nice recurvise function that you love and cherish, but that's incredibly prohibitive to compute.  How can you keep it and make it much faster?  Dynamic programming is said to be hard; but with enough lazyness, you too can do it.",
+    "abstract":"So you've got this nice recursive function that you love and cherish, but that's incredibly prohibitive to compute.  How can you keep it and make it much faster?  Dynamic programming is said to be hard; but with enough lazyness, you too can do it.",
     "language":"en"
 }
 
@@ -15,7 +15,7 @@
 
 Hello Jim, I've been told that you quite enjoy recursion.
 
-You've got this nice recurvise function that you love and cherish, but oh boy it's an incredibly prohibitive one to compute! How can you keep the little recursive thing and make it much faster?
+You've got this nice recursive function that you love and cherish, but oh boy it's an incredibly prohibitive one to compute! How can you keep the little recursive thing and make it much faster?
 
 You've been told that dynamic programming is the Graal. You've been told that dynamic programming hard.
 
