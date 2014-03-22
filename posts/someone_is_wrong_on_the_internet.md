@@ -1,5 +1,5 @@
 {
-   "title": "Membership testing in practical cases",
+   "title": "Someone's Wrong! Membership testing in practical cases",
    "date": "2014-03-22T09:12:08.407670904-04:00",
    "author": "Antoine Grondin",
    "invisible": false,
