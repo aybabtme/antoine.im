@@ -8,15 +8,15 @@
 }
 Obviously, when someone's wrong on the internet, you've gotta do something about it.  In this case, an individual on StackOverflow mentionned that using maps for membership testing was slower than simply iterating over an array, for $n$ small enough.
 
-Their argument was that the cost of hashing the value was higher than doing a lookup in an array, for most practical sizes.  In their term, practical size meant _until over a million values_.
+Their argument was that the cost of hashing the value was higher than doing a lookup in an array, for most practical sizes.  In their words, practical size meant _until over a million values_.
 
-Now you might be wondering why I'm not directly linking to the comment in question.  The reason is that I can't find it back.  I only remember the comment troubled me enough to make me shout _"Someone's wrong on the internet!"_
+Now you might be wondering why I'm not directly linking to the comment in question.  The reason is that I can't find it anymore.  I only remember the comment troubled me enough to make me shout _"Someone's wrong on the internet!"_
 
 ![Someone's wrong on the internet!](http://imgs.xkcd.com/comics/duty_calls.png)
 
-But I still doubted, since their argument could have made sense.  I mean, _maybe_ the cost of hashing is greater than iterating and comparing for $n$ smaller than $something$.  I had a gut feeling it was crap, but I'm not pretentious enough to affirm it was crap before actually verifying it was crap.
+But I had doubts; their argument could have made sense.  I mean, _maybe_ the cost of hashing is greater than iterating and comparing for $n$ smaller than $something$.  I had a gut feeling it was crap, but I'm not pretentious enough to affirm it was crap before actually verifying it was crap.
 
-All in all, finding back the comment (and telling the wronger they're wrong!)  doesn't matter.  What matters is __The Truth__.  In this post, we explore the truth using the [Go Programming Language](http://golang.org/), the greatest language of all (no hyperbole here).
+All in all, finding the comment (and telling the wrongdoer they're wrong!)  doesn't matter.  What matters is __The Truth__.  In this post, we explore the truth using the [Go Programming Language](http://golang.org/), the greatest language of all (no hyperbole here).
 
 ## TL;DR
 
@@ -26,7 +26,7 @@ Obviously this individual was wrong.  Verified for $n>1$, membership testing on 
 
 ## Problem
 
-Membership testing consists in asking a datastructure whether it holds a value or not.  Of the many ways to implement this, two are discussed here:
+Membership testing consists of asking a datastructure whether it contains a value or not.  Of the many ways to implement this, two are discussed here:
 
 ### Map
 
@@ -71,7 +71,7 @@ If my hypothesis is indeed right, there will be a $n$ for which using a slice wi
 
 I can think of 3 dimensions that might affect the results.
 
-1. $n$, the size of the set under test.  The claim here is that for $n$ small enough, a slice will be faster.
+1. $n$, the size of the set being tested.  The claim here is that for $n$ small enough, a slice will be faster.
 2. $valSize$, the size of the individual values stored in the set. As $valSize$ increase, it is possible that the structures will perform differently than with smaller $valSize$.
 3. Whether or not the entry is in the set. It could be that map are faster at determining non-membership.  Or slices.  Who knows!
 
@@ -113,9 +113,10 @@ func sampleInSlice(sliceset []string) {
 }
 ```
 
-Sampling in the `map` is done the same way, but you first need to extract the map keys into a slice.  For benchmark purpose, this function actually returns a slice of unique samples, and then measure how much time it takes to assert the membership of each.
+Sampling in the `map` is done the same way, but you first need to extract the map keys into a slice.  For benchmarking purposes, this function actually returns a slice of unique samples, and then measure how much time it takes to assert the membership of each.
 
 We will use this helper to benchmark maps:
+
 ```go
 func benchMapMembers(b *testing.B, size int, keySize int) {
   m := makeRandomMap(size, keySize)
