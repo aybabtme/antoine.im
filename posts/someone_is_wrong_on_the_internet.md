@@ -14,13 +14,15 @@ Now you might be wondering why I'm not directly linking to the comment in questi
 
 ![Someone's wrong on the internet!](http://imgs.xkcd.com/comics/duty_calls.png)
 
-But I still doubted, since their argument could have made sense.  I mean, _maybe_ the cost of hashing is greater than iterating and comparing for $n$ smaller than $something$.  I had a gut feeling it was crap, but I'm not pretentious enough to actually affirm it was crap before actually verifying it was crap.
+But I still doubted, since their argument could have made sense.  I mean, _maybe_ the cost of hashing is greater than iterating and comparing for $n$ smaller than $something$.  I had a gut feeling it was crap, but I'm not pretentious enough to affirm it was crap before actually verifying it was crap.
 
 All in all, finding back the comment (and telling the wronger they're wrong!)  doesn't matter.  What matters is __The Truth__.  In this post, we explore the truth using the [Go Programming Language](http://golang.org/), the greatest language of all (no hyperbole here).
 
 ## TL;DR
 
 Obviously this individual was wrong.  Verified for $n>1$, membership testing on a map is always faster than on an slice. This means, in all cases you should _not_ use a slice instead of a map.
+
+```<insert fancy graph here>```
 
 ## Problem
 
@@ -234,7 +236,9 @@ func BenchmarkSliceNot_1000000key_10bytes(b *testing.B) { benchSliceNotMembers(b
 
 ## Results
 
-Membership:
+The code to run the benchmarks yourself is on [github](https://gist.github.com/aybabtme/9653488c4f910097b109).  The results of running this benchmark on my Mac follow.
+
+### Membership
 
 <table>
 <tr>
@@ -275,7 +279,7 @@ Membership:
 <tr>  <td>1000000</td>  <td>100</td>  <td>200</td>        <td>10000000</td>   <td>6361138</td>  <td>199</td>    </tr>
 </table>
 
-Non-membership:
+### Non-membership
 
 <table>
 <tr>
