@@ -26,7 +26,7 @@ Obviously this individual was wrong.  Verified for $n>1$, membership testing on 
 
 ## Problem
 
-Membership testing consists in asking a datastructure whether it holds a value or not.  Of the many ways to implement this, tro are discussed here:
+Membership testing consists in asking a datastructure whether it holds a value or not.  Of the many ways to implement this, two are discussed here:
 
 ### Map
 
@@ -77,12 +77,12 @@ I can think of 3 dimensions that might affect the results.
 
 ### Methodology
 
-Taking into consideration the above dimensions, we will benchmark the tro methods of testing for membership.
+Taking into consideration the above dimensions, we will benchmark the two methods of testing for membership.
 
 * For a set of $n$ unique entries, take a random entry that is in the set. Measure how much time it takes to assert that this entry is a member of the set.
 * For a set of $n$ unique entries, take a random entry that is _not_ in the set. Measure how much time it takes to assert that this entry is _not_ a member of the set.
 
-The first step is to create a set of $n$ unique entries, each randomly generated strings of length $valSize$. The actual benchmarking code separates those in tro funcs, so to run one type of benchmark at a time.
+The first step is to create a set of $n$ unique entries, each randomly generated strings of length $valSize$. The actual benchmarking code separates those in two funcs, so to run one type of benchmark at a time.
 
 ```go
 func makeRandomSet(n, valSize int) (map[string]bool, []string) {
@@ -100,7 +100,7 @@ func makeRandomSet(n, valSize int) (map[string]bool, []string) {
 }
 ```
 
-Then, we have tro paths: asserting membership, asserting non-membership.
+Then, we have two paths: asserting membership, asserting non-membership.
 
 #### Membership
 
