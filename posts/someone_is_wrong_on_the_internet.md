@@ -127,7 +127,6 @@ func benchMapMembers(b *testing.B, size int, keySize int) {
 
   var member string
   var ok bool
-  // b.Log("starting")
   b.ResetTimer()
   for i := 0; i < b.N; i++ {
     member = samples[i]
@@ -308,6 +307,7 @@ The results are clear, my hypothesis was wrong. For $n > 1$, membership testing 
 The above was written considering `string` as the type held by the set.  It turns out that for sets of `int`, slices are slightly faster than maps until $n \approx 30$.
 
 ### Integer membership
+
 <table>
 <tr>
   <th>$n$</th>
@@ -337,6 +337,7 @@ The above was written considering `string` as the type held by the set.  It turn
 </table>
 
 ### Integer non-membership
+
 <table>
 <tr>
   <th>$n$</th>
@@ -349,7 +350,6 @@ The above was written considering `string` as the type held by the set.  It turn
 <tr><td>10000</td><td>500000</td><td>100000000</td><td>6220</td><td>25.5</td></tr>
 <tr><td>1000000</td><td>5000</td><td>20000000</td><td>718006</td><td>80.7</td></tr>
 </table>
-
 
 #### Someone was not so clearly wrong on the Internet!!!!
 
