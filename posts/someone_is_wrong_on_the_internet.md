@@ -24,6 +24,8 @@ Obviously this individual was wrong.  Verified for $n>1$, membership testing on 
 
 ```<insert fancy graph here>```
 
+__update__: the tests that follow assume sets of `string` types. The same tests with `int` types reveal that slices are slightly faster until $n \approx 30$.
+
 ## Problem
 
 Membership testing consists of asking a datastructure whether it contains a value or not.  Of the many ways to implement this, two are discussed here:
@@ -69,11 +71,12 @@ If my hypothesis is indeed right, there will be a $n$ for which using a slice wi
 
 ## Testing
 
-I can think of 3 dimensions that might affect the results.
+I can think of ~~3~~ 4 dimensions that might affect the results.
 
 1. $n$, the size of the set being tested.  The claim here is that for $n$ small enough, a slice will be faster.
 2. $valSize$, the size of the individual values stored in the set. As $valSize$ increase, it is possible that the structures will perform differently than with smaller $valSize$.
 3. Whether or not the entry is in the set. It could be that map are faster at determining non-membership.  Or slices.  Who knows!
+4. __update__: the type of the values held in the set.
 
 ### Methodology
 
@@ -243,12 +246,12 @@ The code to run the benchmarks yourself is on [github](https://gist.github.com/a
 
 <table>
 <tr>
-  <td>$n$</td>
-  <td>$valSize$</td>
-  <td>Measurements (slice)</td>
-  <td>Measurements (map)</td>
-  <td>ns/op (slice)</td>
-  <td>ns/op (map)</td>
+  <th>$n$</th>
+  <th>$valSize$</th>
+  <th>Measurements (slice)</th>
+  <th>Measurements (map)</th>
+  <th>ns/op (slice)</th>
+  <th>ns/op (map)</th>
 </tr>
 <tr>  <td>2</td>        <td>10</td>   <td>100000000</td>  <td>100000000</td>  <td>17.0</td>     <td>14.4</td>   </tr>
 <tr>  <td>3</td>        <td>10</td>   <td>100000000</td>  <td>100000000</td>  <td>23.6</td>     <td>18.8</td>   </tr>
@@ -284,12 +287,12 @@ The code to run the benchmarks yourself is on [github](https://gist.github.com/a
 
 <table>
 <tr>
-  <td>$n$</td>
-  <td>$valSize$</td>
-  <td>Measurements (slice)</td>
-  <td>Measurements (map)</td>
-  <td>ns/op (slice)</td>
-  <td>ns/op (map)</td>
+  <th>$n$</th>
+  <th>$valSize$</th>
+  <th>Measurements (slice)</th>
+  <th>Measurements (map)</th>
+  <th>ns/op (slice)</th>
+  <th>ns/op (map)</th>
 </tr>
 <tr>  <td>10</td>       <td>10</td> <td>20000000</td> <td>50000000</td>  <td>97.7</td>    <td>36.5</td> </tr>
 <tr>  <td>10000</td>    <td>10</td> <td>20000</td>    <td>50000000</td>  <td>85053</td>   <td>36.9</td> </tr>
@@ -300,6 +303,55 @@ The results are clear, my hypothesis was wrong. For $n > 1$, membership testing 
 
 #### So clearly, someone was wrong on the Internet!!!!
 
+## Update
+
+The above was written considering `string` as the type held by the set.  It turns out that for sets of `int`, slices are slightly faster than maps until $n \approx 30$.
+
+### Integer membership
+<table>
+<tr>
+  <th>$n$</th>
+  <th>Measurements (slice)</th>
+  <th>Measurements (map)</th>
+  <th>ns/op (slice)</th>
+  <th>ns/op (map)</th>
+</tr>
+<tr><td>2</td><td>200000000</td><td>100000000</td><td>9.02</td><td>11.3</td></tr>
+<tr><td>3</td><td>100000000</td><td>100000000</td><td>11.1</td><td>14.0</td></tr>
+<tr><td>4</td><td>100000000</td><td>100000000</td><td>12.3</td><td>16.0</td></tr>
+<tr><td>5</td><td>100000000</td><td>100000000</td><td>13.2</td><td>16.4</td></tr>
+<tr><td>6</td><td>100000000</td><td>100000000</td><td>13.7</td><td>17.4</td></tr>
+<tr><td>7</td><td>100000000</td><td>100000000</td><td>14.5</td><td>19.4</td></tr>
+<tr><td>8</td><td>100000000</td><td>100000000</td><td>15.1</td><td>20.5</td></tr>
+<tr><td>9</td><td>100000000</td><td>50000000</td><td>16.0</td><td>29.9</td></tr>
+<tr><td>10</td><td>100000000</td><td>50000000</td><td>16.7</td><td>29.9</td></tr>
+<tr><td>20</td><td>100000000</td><td>50000000</td><td>24.6</td><td>29.8</td></tr>
+<tr><td>30</td><td>50000000</td><td>50000000</td><td>31.1</td><td>28.5</td></tr>
+<tr><td>40</td><td>50000000</td><td>50000000</td><td>35.3</td><td>31.6</td></tr>
+<tr><td>50</td><td>50000000</td><td>50000000</td><td>39.5</td><td>30.7</td></tr>
+<tr><td>100</td><td>50000000</td><td>50000000</td><td>56.2</td><td>30.6</td></tr>
+<tr><td>1000</td><td>5000000</td><td>50000000</td><td>340</td><td>29.8</td></tr>
+<tr><td>10000</td><td>500000</td><td>50000000</td><td>3212</td><td>32.6</td></tr>
+<tr><td>100000</td><td>50000</td><td>50000000</td><td>31051</td><td>40.4</td></tr>
+<tr><td>1000000</td><td>5000</td><td>50000000</td><td>331630</td><td>74.7</td></tr>
+</table>
+
+### Integer non-membership
+<table>
+<tr>
+  <th>$n$</th>
+  <th>Measurements (slice)</th>
+  <th>Measurements (map)</th>
+  <th>ns/op (slice)</th>
+  <th>ns/op (map)</th>
+</tr>
+<tr><td>10</td><td>100000000</td><td>100000000</td><td>18.0</td><td>25.4</td></tr>
+<tr><td>10000</td><td>500000</td><td>100000000</td><td>6220</td><td>25.5</td></tr>
+<tr><td>1000000</td><td>5000</td><td>20000000</td><td>718006</td><td>80.7</td></tr>
+</table>
+
+
+#### Someone was not so clearly wrong on the Internet!!!!
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
