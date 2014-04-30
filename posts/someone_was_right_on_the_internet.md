@@ -72,7 +72,7 @@ When you ask yourself which of the two is preferable, you will know that:
 
 * X has a nicer API than Y.
 * I'm worried that Y might be more performant.
-* Now I know that if it's true, the different (will/won't) matter.
+* Now I know that if it's true, the difference (will/won't) matter.
 
 ## Implementing FIFOs, slices vs `container/list`
 
@@ -83,7 +83,8 @@ The case I wanted to use a queue for was simple:
 * Re-enqueue things when the processing fails.
 * Peek at the next thing to process.
 * Check if there's anything to process.
-* Have in order visibility over the things in the queue.
+* Have in order iterability over the things in the queue. This means I couldn't
+use channels.
 
 I didn't need priorities, deduplication, deletion, etc.  Really, just a queue.
 
@@ -130,7 +131,7 @@ func (t *ThingVector) Dequeue() Thing {
 }
 ```
 The other methods are trivial, but you can have a peek at the whole source on
-my [Github](https://github.com/aybabtme/antoine.im/tree/master/assets/data/fifobench/slice_fifo.go)).
+my [Github](https://github.com/aybabtme/antoine.im/tree/master/assets/data/fifobench/slice_fifo.go).
 
 ## Using a list (`container/list`)
 
@@ -289,8 +290,8 @@ we would expect to actually favor lists the most:
 You can see the full results [here](/assets/data/fifobench/benchcmp.txt).
 
 The results are consistent when $n<32$ for enqueuing, but the dequeuing
-benchmarks take too long to converge to meaninful results, so I've gave up
-on producing them.
+benchmarks take too long to converge to meaninful results, so I've given
+up on producing them.
 
 Still, 32 is a pretty decent number and you won't notice any difference,
  using a list or a slice, for 32 or less elements.
@@ -299,6 +300,14 @@ Still, 32 is a pretty decent number and you won't notice any difference,
 
 That's it, Tv was right.  The more you know!  If you want to have a look
 at the full code, find it [here](https://github.com/aybabtme/antoine.im/tree/master/assets/data/fifobench).
+
+## Thanks
+
+I would like to thank [Tv](https://twitter.com/tv), [Alex Coco](https://twitter.com/_alexcoco),
+[Jesse Storimer](https://twitter.com/jstorimer), [Ben Johnson](https://twitter.com/benbjohnson)
+ and [Willem van Bergen](https://twitter.com/wvanbergen) for reviewing the
+ draft of this post.
+
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
