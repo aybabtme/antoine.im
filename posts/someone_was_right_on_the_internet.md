@@ -303,10 +303,16 @@ at the full code, find it [here](https://github.com/aybabtme/antoine.im/tree/mas
 
 ## Thanks
 
-I would like to thank [Tv](https://twitter.com/tv), [Alex Coco](https://twitter.com/_alexcoco),
-[Jesse Storimer](https://twitter.com/jstorimer), [Ben Johnson](https://twitter.com/benbjohnson)
- and [Willem van Bergen](https://twitter.com/wvanbergen) for reviewing the
- draft of this post.
+I would like to thank:
+
+* [Tv](https://twitter.com/tv),
+* [Caleb Spare](https://github.com/cespare),
+* [Alex Coco](https://twitter.com/_alexcoco),
+* [Jesse Storimer](https://twitter.com/jstorimer),
+* [Ben Johnson](https://twitter.com/benbjohnson), and
+* [Willem van Bergen](https://twitter.com/wvanbergen)
+
+...for reviewing the draft of this post.
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
