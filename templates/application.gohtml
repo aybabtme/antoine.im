@@ -13,7 +13,13 @@
 </head>
 
 <body>
-<header>{{template "header" .}}</header>
+<header>
+  {{template "header" .}}
+</header>
+
+<a href="https://github.com/aybabtme"><i class="fa fa-github-square fa-2x"></i></a>
+<a href="https://twitter.com/AntoineGrondin"><i class="fa fa-twitter fa-2x"></i></a>
+
 <div id="content">{{template "content" .}}</div>
 <footer>{{template "footer" .}}</footer>
 {{template "javascript" .}}
