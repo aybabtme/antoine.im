@@ -35,20 +35,20 @@ Even more plausible and drastic _numbers_ are from [Caleb Space](https://github.
 a `list.List` with a slice in an commit to package [`github.com/bmizerany/perks`](https://github.com/bmizerany/perks),
 (computes approximate quantiles on unbounded data streams):
 
->> ```
->> quantile: Replace container/list with a slice
->> Better data locality trumps asymptotic behavior in this case.
->>
->> benchmark                               old ns/op     new ns/op     delta
->> BenchmarkQuerySmallEpsilon              44491         6782          -84.76%
->> BenchmarkInsertBiasedSmallEpsilon       2641          871           -67.02%
->> BenchmarkQuery                          691           306           -55.72%
->> BenchmarkInsertBiased                   324           177           -45.37%
->> BenchmarkInsertTargetedSmallEpsilon     1016          616           -39.37%
->> BenchmarkInsertTargeted                 294           191           -35.03%
->> ```
->>
->> -- [Cespare](https://github.com/cespare/perks/commit/456f18a8e50eba8f1ea6d8728e8000072e3b322c)
+> ```
+> quantile: Replace container/list with a slice
+> Better data locality trumps asymptotic behavior in this case.
+>
+> benchmark                               old ns/op     new ns/op     delta
+> BenchmarkQuerySmallEpsilon              44491         6782          -84.76%
+> BenchmarkInsertBiasedSmallEpsilon       2641          871           -67.02%
+> BenchmarkQuery                          691           306           -55.72%
+> BenchmarkInsertBiased                   324           177           -45.37%
+> BenchmarkInsertTargetedSmallEpsilon     1016          616           -39.37%
+> BenchmarkInsertTargeted                 294           191           -35.03%
+> ```
+>
+> -- [Cespare](https://github.com/cespare/perks/commit/456f18a8e50eba8f1ea6d8728e8000072e3b322c)
 
 In face of such counter-examples, one can do two things:
 
