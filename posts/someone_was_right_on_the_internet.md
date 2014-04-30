@@ -31,7 +31,7 @@ goes against my instinct and what I've read before. So it's worth verifying.
 At least to get a feel for it: see if it's true or not, to see just how similar or
 different they are.
 
-Even more plausible and drastic _numbers_ are from [Caleb Space](https://github.com/cespare) who replaced
+Even more plausible and drastic _numbers_ are from [Caleb Spare](https://github.com/cespare) who replaced
 a `list.List` with a slice in an commit to package [`github.com/bmizerany/perks`](https://github.com/bmizerany/perks),
 (computes approximate quantiles on unbounded data streams):
 
