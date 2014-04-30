@@ -1,18 +1,22 @@
 package fifobench
 
 import (
+	"github.com/dustin/go-humanize"
+	"runtime"
 	"testing"
 )
-
-func TestVectorIsEmpty(t *testing.T)           { IsEmpty(t, NewVector) }
-func TestVectorEnqueues(t *testing.T)          { Enqueues(t, NewVector) }
-func TestVectorDequeues(t *testing.T)          { Dequeues(t, NewVector) }
-func TestVectorEnqueueAndDequeue(t *testing.T) { EnqueueAndDequeue(t, NewVector) }
 
 func TestListIsEmpty(t *testing.T)           { IsEmpty(t, NewList) }
 func TestListEnqueues(t *testing.T)          { Enqueues(t, NewList) }
 func TestListDequeues(t *testing.T)          { Dequeues(t, NewList) }
 func TestListEnqueueAndDequeue(t *testing.T) { EnqueueAndDequeue(t, NewList) }
+func TestListMemoryIsBounded(t *testing.T)   { MemoryIsBounded(t, NewList) }
+
+func TestVectorIsEmpty(t *testing.T)           { IsEmpty(t, NewVector) }
+func TestVectorEnqueues(t *testing.T)          { Enqueues(t, NewVector) }
+func TestVectorDequeues(t *testing.T)          { Dequeues(t, NewVector) }
+func TestVectorEnqueueAndDequeue(t *testing.T) { EnqueueAndDequeue(t, NewVector) }
+func TestVectorMemoryIsBounded(t *testing.T)   { MemoryIsBounded(t, NewVector) }
 
 func IsEmpty(t *testing.T, fifoMaker func() ThingFIFO) {
 	fifo := fifoMaker()
@@ -97,5 +101,38 @@ func EnqueueAndDequeue(t *testing.T, fifoMaker func() ThingFIFO) {
 		if got != want {
 			t.Fatalf("want %q, got %q", want, got)
 		}
+	}
+}
+
+func MemoryIsBounded(t *testing.T, fifoMaker func() ThingFIFO) {
+	runtime.GC()
+
+	fifo := fifoMaker()
+	mem := runtime.MemStats{}
+
+	size := int(1e6)
+
+	things := NewThings(10, size)
+	for _, junk := range things {
+		fifo.Enqueue(junk)
+	}
+
+	runtime.ReadMemStats(&mem)
+	start := mem.TotalAlloc
+
+	for i := 0; i < size; i++ {
+		fifo.Enqueue(fifo.Dequeue())
+	}
+
+	runtime.ReadMemStats(&mem)
+	after := mem.TotalAlloc
+
+	t.Logf("used ~%s", humanize.Bytes(after-start))
+
+	atmost := 2 * start
+	if after > atmost {
+		t.Errorf("memory unbounded, want at most %s got %s",
+			humanize.Bytes(atmost),
+			humanize.Bytes(after))
 	}
 }
