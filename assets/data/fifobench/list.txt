@@ -1,0 +1,36 @@
+PASS
+Benchmark_Enqueue_32    200000        8163 ns/op      2108 B/op       64 allocs/op
+Benchmark_Enqueue_64    100000       14648 ns/op      4216 B/op      128 allocs/op
+Benchmark_Enqueue_128    50000       36881 ns/op      8432 B/op      257 allocs/op
+Benchmark_Enqueue_256    50000       78247 ns/op     16865 B/op      515 allocs/op
+Benchmark_Enqueue_512    10000      145720 ns/op     33731 B/op     1030 allocs/op
+Benchmark_Enqueue_1024      5000      310665 ns/op     67463 B/op     2060 allocs/op
+Benchmark_Enqueue_2048      2000      543738 ns/op    134926 B/op     4120 allocs/op
+Benchmark_Enqueue_4096      2000      936551 ns/op    269853 B/op     8240 allocs/op
+Benchmark_Enqueue_8192      1000     2376402 ns/op    539707 B/op    16480 allocs/op
+Benchmark_Enqueue_16384      500     4421926 ns/op   1079416 B/op    32960 allocs/op
+Benchmark_Enqueue_32768      200     9440943 ns/op   2158827 B/op    65921 allocs/op
+Benchmark_Enqueue_65536      100    14862841 ns/op   4317662 B/op   131842 allocs/op
+Benchmark_Enqueue_131072        50    39377239 ns/op   8635324 B/op   263685 allocs/op
+Benchmark_Enqueue_262144        50    80871856 ns/op  17270643 B/op   527371 allocs/op
+Benchmark_Enqueue_524288        10   183769573 ns/op  34541280 B/op  1054743 allocs/op
+Benchmark_Enqueue_1048576        5   292706216 ns/op  69082592 B/op  2109487 allocs/op
+Benchmark_Enqueue_2097152        2   594833520 ns/op  138165088 B/op   4218975 allocs/op
+Benchmark_Dequeue_32	 1000000	      1206 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_64	 1000000	      2389 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_128	  500000	      4790 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_256	  200000	      9490 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_512	  100000	     18862 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_1024	   50000	     37508 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_2048	   20000	     75552 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_4096	   10000	    154085 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_8192	    5000	    305980 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_16384	    5000	    604432 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_32768	    2000	   1213378 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_65536	    1000	   2400093 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_131072	     500	   4837772 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_262144	     200	   9592371 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_524288	     100	  19138455 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_1048576	      50	  38539214 ns/op	       0 B/op	       0 allocs/op
+Benchmark_Dequeue_2097152	      20	  80684682 ns/op	       0 B/op	       0 allocs/op
+ok  	_/private/tmp/fifobench	288.960s
