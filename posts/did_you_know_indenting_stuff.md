@@ -34,7 +34,7 @@ an encoder for [`fatherhood`](https://github.com/aybabtme/fatherhood) so having 
 should turn out to be very convenient. But I did write a decoder!
 
 This decoder is super fast. Like really fast. It uses nothing but [megajson's](https://github.com/benbjohnson/megajson)
-scanner. So it's fast like it megajson (faster than light in a vacuum).  Worst, working on fatherhood,
+scanner. So it's fast like megajson (faster than light in a vacuum).  Worst, working on fatherhood,
 I got to submit PRs to megajson, rendering fatherhood almost irrelevant. The
 scanner can pretty much do everything you'd need, without code generation.
 
