@@ -76,13 +76,13 @@ Alright, alright.  "_Premature optimization is the root of all evil._" Sure it i
 
 So, why should we read many bytes at once instead of one at a time?  Let's look at this graph, measured on my MacBook Pro<sub>1</sub>:
 
-![Read/Write speed for a file of 1.0MB](/assets/data/to_buffer_or_not_to_buffer/mbpr_256GB_ssd_bench_1.0MB.svg "As the size of the data increases, the speed of access also increase")
+<img src="/assets/data/to_buffer_or_not_to_buffer/mbpr_256GB_ssd_bench_1.0MB.png" style="width:50%;"/>
 
 In the above graph, we see that as $access\ size$ increases, the time it takes to read a 1 MB file decreases.  And this decrease is exponential (see the two logarithm scales).
 
 So this is on my fast SSD.  But your regular, cheap-o web instance won't have a fast SSD (or most likely not), so what will performance look like?  Well, even worst !  Let's look at the same benchmark run on an [AWS EC2 t1.micro instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts_micro_instances.html):
 
-![Read/Write speed for a file of 1.0MB](/assets/data/to_buffer_or_not_to_buffer/t1_micro_bench_1.0MB.svg "The same relation but on a T1 Micro instance.")
+<img src="/assets/data/to_buffer_or_not_to_buffer/t1_micro_bench_1.0MB.png"  style="width:50%;"/>
 
 You can see that for accesses using small buffers, the decrease in performance is 10 times that of my laptop SSD, while with buffering, the difference is not as significant (although the instance's disk - an [EBS](https://aws.amazon.com/ebs/) - has pretty terrible performances).
 
