@@ -2,7 +2,7 @@
     "title":"On Files: To Buffer Or Not To Buffer",
     "author":"Antoine Grondin",
     "date":"2013-11-07T00:16:30.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"How should I read or write to a file? Buffering, what is buffering?"
 }
 

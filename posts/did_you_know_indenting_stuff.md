@@ -2,7 +2,7 @@
    "title": "Did You Know You Could Indent Stuff",
    "date": "2014-05-30T20:05:53.176518334-04:00",
    "author": "Antoine Grondin",
-   "invisible": false,
+   "invisible": true,
    "abstract": "JSON is great you could eat that for breakfast and skip coffee.",
    "language": "en"
 }

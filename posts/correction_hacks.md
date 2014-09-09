@@ -2,7 +2,7 @@
     "title":"Correction Hacks",
     "author":"Antoine Grondin",
     "date":"2013-11-04T18:00:00.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"Correcting assignments with the Blackboard software is a real pain.  Here's how I helped myself having a nicer day.",
     "language": "en"
 }

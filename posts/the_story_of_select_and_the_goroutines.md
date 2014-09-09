@@ -2,7 +2,7 @@
     "title":"Go: Non blocking producers and consumers",
     "author":"Antoine Grondin",
     "date":"2014-02-01T15:09:10.000Z",
-    "invisible": false,
+    "invisible": true,
     "abstract":"Go offers many facilities to make concurrency easy. I demonstrate two simple idioms that are convenient.",
     "language":"en"
 }

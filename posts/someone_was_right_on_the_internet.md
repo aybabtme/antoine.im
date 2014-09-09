@@ -2,7 +2,7 @@
    "title": "Someone's Right! Building a queue: list or slices?",
    "date": "2014-04-29T22:03:22.386395056-04:00",
    "author": "Antoine Grondin",
-   "invisible": false,
+   "invisible": true,
    "abstract": "Should you use a slice or a list to build a queue? Your CS textbook says that linked lists are better, is this true?",
    "language": "en"
 }
