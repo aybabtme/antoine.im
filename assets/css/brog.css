@@ -22,7 +22,7 @@ header h1 {
 #content {
     width:60%;
     margin:0 auto;
-    text-align:left; }
+    text-align:justify; }
 
 footer {
     padding: 0px, 0px;
@@ -36,6 +36,7 @@ footer {
 
 body {
     text-align: center;
+
     margin: 0;
 
     font-family: 'Roboto Mono', null;
@@ -50,6 +51,7 @@ body {
     padding: 50px 50px; }
 
 h1 {
+    text-align:left;
     font-family: 'Roboto Mono', null;
     font-style: normal;
     font-weight: 100;
@@ -63,6 +65,7 @@ h1 {
 
 /* sub headings in blog posts */
 h2 {
+    text-align:left;
     font-family: 'Source Code Pro', null;
     font-style: normal;
     font-weight: 200;
