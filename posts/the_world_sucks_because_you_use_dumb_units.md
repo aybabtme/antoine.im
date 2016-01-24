@@ -7,8 +7,6 @@
     "language":"en"
 }
 
-# The World Sucks Because You Use Dumb Units
-
 We were promised flying cars. It's 2015 and we don't have them. I demand explanations and I've found at least one: we're still being stupid about our usage of units.
 
 ## Complexity, Reject Complexity

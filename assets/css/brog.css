@@ -6,11 +6,21 @@ header {
     left: 0;
     width:100%;}
 
+ /* the blog's title */
 header h1 {
+    font-family: 'Roboto Mono', null;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    line-height: 1.4;
     color: #535353; }
 
 #content {
-    width:80%;
+    width:60%;
     margin:0 auto;
     text-align:left; }
 
@@ -27,14 +37,41 @@ footer {
 body {
     text-align: center;
     margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
+
+    font-family: 'Roboto Mono', null;
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    word-spacing: 0.047em;
+    line-height: 1.39;
     padding: 50px 50px; }
 
 h1 {
-    color: #444; }
+    font-family: 'Roboto Mono', null;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 60px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    line-height: 1.4;
+    color: #999; }
 
+/* sub headings in blog posts */
 h2 {
+    font-family: 'Source Code Pro', null;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    line-height: 1.4;
     color: #666; }
 
 h2 a {
