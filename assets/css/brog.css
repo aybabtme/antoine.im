@@ -8,6 +8,7 @@ header {
 
  /* the blog's title */
 header h1 {
+    text-align: center;
     font-family: 'Roboto Mono', null;
     font-style: normal;
     font-weight: 100;
