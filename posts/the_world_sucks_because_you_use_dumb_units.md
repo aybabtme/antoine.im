@@ -2,7 +2,7 @@
     "title":"The World Sucks Because You Use Dumb Units",
     "author":"Antoine Grondin",
     "date":"2016-01-24T16:41:00.000Z",
-    "invisible": true,
+    "invisible": false,
     "abstract":"We were promised flying cars. It's 2015 and we don't have them. I demand explanations and I've found at least one: we're still being stupid about our usage of units.",
     "language":"en"
 }
