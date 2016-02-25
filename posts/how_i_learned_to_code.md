@@ -67,10 +67,7 @@ imagine what the officer of the Signal Squadron thought when I asked:
 
 Would you? The Signals Officer sort of laughed at me and told me to use Excel.
 So I wrote a tool to automate this man's job in Excel. I picked up what I could
-using fancy techniques like:
-
-- The Pythagorean theorem.
-- String concatenation.
+using fancy techniques like, the Pythagorean theorem and string concatenation.
 
 <a href="/assets/data/how_i_learned_to_code/maintainable_code.png">
     <img src="/assets/data/how_i_learned_to_code/maintainable_code.png" style="width:60%;"/>
