@@ -76,7 +76,12 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/opt/bin/prometheus/prometheus -config.file=/etc/prometheus/config.yml -storage.local.path=/var/lib/prometheus
+ExecStart=/opt/bin/prometheus/prometheus \
+  -config.file=/etc/prometheus/config.yml \
+  -storage.local.path=/var/lib/prometheus \
+  -web.listen-address "localhost:9090" \
+  -storage.local.retention 8640h \
+  -log.format logger:stderr?json=true
 Restart=always
 
 [Install]
