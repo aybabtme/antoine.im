@@ -1,5 +1,5 @@
 {
-    "title":"In Another Life, I Learned To Code",
+    "title":"An Infantryman Learns To Code",
     "author":"Antoine Grondin",
     "date":"2016-02-25T23:59:59.000Z",
     "invisible": false,
