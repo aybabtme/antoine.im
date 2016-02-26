@@ -1,6 +1,6 @@
 {
-   "prodPort": "8080",
-   "develPort": "3000",
+   "prodPort": "80",
+   "develPort": "8080",
    "hostName": "localhost",
    "maxCpus": 1,
    "templatePath": "templates",
@@ -8,9 +8,6 @@
    "pagePath": "pages",
    "assetPath": "assets",
    "postFileExtension": ".md",
-   "logFilename": "brog.log",
-   "logFileVerbosity": "warn",
-   "consoleVerbosity": "warn",
    "rewriteInvalid": true,
    "rewriteMissing": true,
    "multilingual": false,
