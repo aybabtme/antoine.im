@@ -138,10 +138,6 @@ Amazon (2013).
 
 Then I interned at [Shopify][] (2014).
 
-Then [Ben][] and
-[Moisey Uretsky][Moisey] made a bet on me and offered me a [job][] at
-[DigitalOcean][] (2014).
-
 Then I graduated (2016).
 
 ## Then I'm here today.
@@ -150,8 +146,6 @@ When I joined the army, I felt I had begun a second life. A life where I would
 learn to be a disciplined and organized person. When I started my degree, I
 began a third life. Now I graduated, I'm not sure what to do. It's the first
 time in years that I have so much time on my hands, with only a full time job.
-Luckily for me, DigitalOcean is young enough a startup that I can have as large
-an impact as I want by just _doing_ stuff.
 
 I can recall when I started writing that VBA stuff, as I realized that I was
 doing something that mattered, that I was changing the status quo. And I
