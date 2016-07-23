@@ -9,7 +9,7 @@
 
 Some days are hard. Trying to make the most of your life without being sure what's the value of life. Having life goals that you feel are arbitrary, because life is arbitrary, and thus any life goal must be arbitrary.
 
-Thinking that life is meaningless and trying to accept this as a statement that doesn't imply that the experience of life is meaningless. The fact that I'm experiencing life and getting emotions out of it makes the experience meaningful, simply because it feels good, or bad.
+Thinking that life is meaningless and trying to accept this as a statement doesn't imply that the experience of life is meaningless. The fact that I'm experiencing life and getting emotions makes the experience meaningful, simply because it feels good, or bad.
 
 The acceptance that life is meaningless but that experiencing it is not, gives me an overarching theme: making the most out of it. And everything hard follows from there. How do you make the most out of it? What activity will give you the most amount of joy. What strategy will lead to long term joy, instead of short term joy, preferably a mix of both!
 
