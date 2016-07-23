@@ -27,7 +27,7 @@ My problem right now is trying to find a strategy to cope with day to day existe
 
 My preference is toward the first method, but it seems to be the harder method of them all, and I'm not sure it's possible. Some days, I feel existentially satisfied, which gives me hope that it's a reachable goal. But then there's all those other days. Trying to be existentially satisfied in this manner seems to require constant goal reaching, which is exhausting. Exhausting because it's hard to continuously be moving forward, and sometimes because you just don't know how to move forward. Not knowing how to move forward is the worst of both, because it gives you feelings of restlessness.
 
-Anyways, at least I wrote this down. I'll keep feeling restless all day, reading Wikipedia entries on [nihilism][1], [existential nihilism][2], [existential crises][3], [existencialism][4],[mathematical anxiety][5] and [secular spirituality][6], in hope that someone maybe found a name for the problem... until I get tired and go to sleep. And then tomorrow I'll wake up feeling aweful that I didn't make the most of yesterday.
+Anyways, at least I wrote this down. I'll keep feeling restless all day, reading Wikipedia entries on [nihilism][1], [existential nihilism][2], [existential crises][3], [existencialism][4], [mathematical anxiety][5] and [secular spirituality][6], in hope that someone maybe found a name for the problem... until I get tired and go to sleep. And then tomorrow I'll wake up feeling aweful that I didn't make the most of yesterday.
 
 [1]: https://en.wikipedia.org/wiki/Nihilism
 [2]: https://en.wikipedia.org/wiki/Existential_nihilism
