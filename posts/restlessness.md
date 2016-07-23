@@ -15,7 +15,7 @@ The acceptance that life is meaningless but that experiencing it is not, gives m
 
 I gather that life as a secular is harder than that of a believer. Seculars have to make up purpose for themselve, and deal with the fact that ultimately, they can't deny the meaninglessness of life.
 
-We know that life is meaningless, but we decide to ignore this inconvenient truth when we chose to enjoy its experience anyways.
+We know that life is meaningless, but we decide to ignore this inconvenient truth when we chose to enjoy its experience regardless.
 
 I'll call this The Great Act Of Hypocrisy, and I think it's a necessary sacrifice of consistency for the optimistic secular person. It seems necessary that we pick arbitrarily purposes and decide as a matter of practicality, that they are more important than other purposes. To distinguish from the notion of things that would have a purpose in absolute (if there was true absolute purpose), I'll call those "hypo-purpose", for they are hypocritical purposes.
 
